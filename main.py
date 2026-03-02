@@ -39,6 +39,16 @@ def main(page: ft.Page):
         label="Horas: {value}",
         height=25
 ))
+    page.add(ft.ElevatedButton(
+        text="Crear Evento",
+        on_click=lambda e: print("Evento creado")
+    ))
     
+    page.add(ft.Text(
+        value="¡Evento creado con éxito!",
+        size=20,
+        color=ft.colors.GREEN,
+        visible=False
+    ))
 
 ft.run(main)
