@@ -129,6 +129,23 @@ def main(page: ft.Page):
         color=ft.Colors.WHITE
     )
     
+    def limpiar():
+        nombre.value = ""
+        opcion.value = None
+        modalidad.value = None
+        inscripcion.value = False
+        hora.value = 1
+        fecha.value = datetime.now()
+        resumen.value = ""
+        lista.visible = False
+        page.update()
+    
+    limpia = ft.ElevatedButton(
+        "Limpiar formulario",
+        on_click=limpiar,
+        bgcolor=ft.Colors.RED_400,
+        color=ft.Colors.WHITE
+    )
     
     page.add(
         ft.Column(
@@ -143,7 +160,8 @@ def main(page: ft.Page):
                 ft.Row([ft.Text("Horas"), hora]),
                 ft.Row([ft.Text("Fecha del evento"), selfecha]),
                 boton,
-                ver
+                ver,
+                limpia
             ],
             alignment=ft.MainAxisAlignment.CENTER,
             spacing=20
